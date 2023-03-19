@@ -1,0 +1,14 @@
+# PREFIX WITH ";" TO NOT MOVE TO NEXT FILE
+sane_theme \
+	--action1 ";[show keys (?)] feh_help"\
+	--action2 "[delete file (C-del)] feh_del %F"\
+	--action3 ";[findit (C-s)] findit %F"\
+	--auto-zoom\
+	--draw-filename\
+	--draw-tinted\
+	--info ";feh_info %F"\
+	-W 1900 -E 250 -y 250\
+	--scale-down\
+	--sort filename\
+	--version-sort\
+	--index-info ''\

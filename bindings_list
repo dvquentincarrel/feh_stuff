@@ -1,0 +1,24 @@
+a: Toggle action display;A: Toggle anti-aliasing
+c: Enable caption entry mode;d: Toggle filename display
+e: Toggle exif tag display;f: Toggle fullscreen
+g: Toggle fixed geometry mode;h: pause/continue slideshow
+i: Toggle --info display;k: Toggle zoom/viewport freeze when switching images
+L: Save current filelist to unique filename;m: Show/hide menu
+n, <SPACE>, <RIGHT>: Go to next image;o: Toggle pointer visibility
+p, <BACKSPACE>, <LEFT>: Go to previous image;q, <ESCAPE>: Quit
+r: Reload image;R: Render/anti-alias image
+s: Save current image to unique filename;w: Resize window to current image dimensions
+x: Close current window;z: Jump to a random position in the current filelist
+Z: Toggle auto-zoom;[, ]: Jump to previous/next directory
+<, >: Rotate 90 degrees right/left;_: Vertical flip
+|: Horizontal flip;0, <ENTER>: Run action specified by --action option
+1-9 Run action 1-9 specified by --action[1-9] options;<HOME> Go to first slide
+<END> Go to last slide;<PAGEUP> Go forward 5% of the filelist
+<PAGEDOWN> Go backward 5% of the filelist;+: Increase reload delay by 1 second
+-: Decrease reload delay by 1 second;<DELETE>: Remove the currently viewed file from the filelist
+<KEYPAD LEFT>: Move the image to the left;<KEYPAD RIGHT>: Move the image to the right
+<KEYPAD UP>: Move the image up;<KEYPAD DOWN>: Move the image down
+<KEYPAD BEGIN>: Antialias the image;<KEYPAD +>, <UP>: Zoom in
+<KEYPAD ->, <DOWN>: Zoom out;<KEYPAD *>: Zoom to 100%
+<KEYPAD />: Zoom to fit the window;<C-s>: Runs findint on current file
+?: Opens this page;<C-Del>: Deletes currently viewed file

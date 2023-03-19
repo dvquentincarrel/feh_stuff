@@ -1,0 +1,6 @@
+#!/bin/bash
+# Used to display informations about a picture in feh
+for file in "$@"; do
+    # identify comes from imagemagick
+	identify "$file" | awk '{print $3"   "$7"   "$1}'
+done

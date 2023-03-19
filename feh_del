@@ -1,0 +1,13 @@
+#!/bin/sh
+# REQUIRES: libnotify
+# Script used to handle reversible file deletion in feh
+if [ ! -d /tmp/feh_del ];then
+	mkdir /tmp/feh_del
+fi
+mv "$1" /tmp/feh_del/
+res=$?
+if [ $res -eq 0 ]; then
+	notify-send -t 1000 "$1 deleted"
+else
+	notify-send -t 2000 "error: exit status $res"
+fi

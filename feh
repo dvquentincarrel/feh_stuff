@@ -1,0 +1,7 @@
+#!/bin/bash
+# Makes feh browse a whole dir by default
+if [ "$#" -eq 1 ] && [ -f "$1" ]; then
+	/bin/feh --theme sane_theme --start-at "$1"
+else
+	/bin/feh --theme sane_theme $*
+fi

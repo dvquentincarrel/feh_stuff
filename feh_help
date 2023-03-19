@@ -1,0 +1,11 @@
+#!/bin/bash
+# Displays feh keybinds cheatsheet
+# FOTM_TERM is an env variable, latest terminal I've taken a liking to
+keys_path=$(dirname $(readlink -m $0))/bindings_list
+if [ -f "$keys_path" ]; then
+    # SGR not separated with semicolon, gets interpreted as separator by `column`
+    # fancy sed to color and embolden keys entries
+    alacritty -e bash -c "perl -pe 's/(^|;)(.*?):/\1\e[33m\e[1m\2\e[m:/g' $keys_path | column -s';' -t | less -nR"
+else
+    notify-send -t 1000 "Could not find feh bindings file"
+fi
