@@ -1,0 +1,5 @@
+#!/bin/bash
+# Sets the desktop wallpaper using feh and a random picture from the given dir
+PAPES_DIR="~/Images/wallpapers/*"
+[ -n "$1" ] && PAPES_DIR="$1"
+feh --bg-fill --randomize "$PAPES_DIR"
