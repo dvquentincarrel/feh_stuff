@@ -30,4 +30,4 @@ while read -r line; do
 files+=("$line")
 done <<< $(find "$PWD" -type f | grep $extensions_pattern | sort -R)
 
-/bin/feh --scale-down --slideshow-delay $timer "${files[@]}"&
+feh --theme playlist_theme --slideshow-delay $timer "${files[@]}"&

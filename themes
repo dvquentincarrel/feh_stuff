@@ -12,3 +12,11 @@ sane_theme \
 	--sort filename\
 	--version-sort\
 	--index-info ''\
+
+playlist_theme \
+	--action1 ";[show keys (?)] feh_help"\
+	--action3 ";[findit (C-s)] findit %F"\
+	--auto-zoom\
+	--draw-tinted\
+	--info ";feh_info %F"\
+    --scale-down
