@@ -3,6 +3,6 @@
 SLEEPTIME=30
 [[ -n $1 ]] && SLEEPTIME=$1
 while true; do
-	rand_dbg $2
+	rand_dbg "$2"
 	sleep $SLEEPTIME
 done
