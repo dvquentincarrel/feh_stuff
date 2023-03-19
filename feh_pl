@@ -1,6 +1,10 @@
 #!/bin/bash
 # Makes a randomized slideshow using feh
 
+timer=3
+extensions_pattern="png\|jpg\|jpeg"
+files=()
+
 if [ "$1" = "-h" ] || [ $# -gt 1 ]; then
 	echo "feh_pl [DURATION]"
 	echo "builds randomized slideshow with all image files recursively found at cwd."
@@ -8,25 +12,22 @@ if [ "$1" = "-h" ] || [ $# -gt 1 ]; then
 	exit 0
 fi
 
-if [ $# -gt 0 ]; then
-	if ! echo "$@" | grep -Pi "^[0-9]+\.?[0-9]*$" &>/dev/null; then
-		echo "$1 not a number!" 
-		exit 1
-	else
-		echo "timer: $1 sec."
-	fi
+# If there is an arg, and it's a number, define it as timer
+if [ $# -eq 0 ]; then
+	echo timer unset, default is 3s
+else
+    if ! echo "$1" | grep -Pi "^[0-9]+\.?[0-9]*$" &>/dev/null; then
+        echo "$1 is not a number!" 
+        exit 1
+    else
+        timer=$1
+        echo "timer: $1 sec."
+    fi
 fi
 
-extensions_pattern="png\|jpg\|jpeg"
-files=()
-
+# Recursively gathers all files with matching extensions under cwd, into an array
 while read -r line; do
 files+=("$line")
-done <<< $(/bin/find "$PWD" -type f | grep $extensions_pattern | sort -R)
+done <<< $(find "$PWD" -type f | grep $extensions_pattern | sort -R)
 
-timer=$1
-if [ -z $1 ]; then
-	echo timer unset, default is 3s
-	timer=3
-fi
 /bin/feh --scale-down --slideshow-delay $timer "${files[@]}"&
