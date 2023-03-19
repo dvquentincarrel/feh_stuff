@@ -6,6 +6,7 @@ command -v notify-send >/dev/null || echo "Notify-send not found. Can be found i
 
 lbin="$HOME/.local/bin"
 mkdir -p "$HOME/.local/bin"
+ln -si "$PWD/feh"       "$lbin/feh"
 ln -si "$PWD/feh_del"   "$lbin/feh_del"
 ln -si "$PWD/feh_info"  "$lbin/feh_info" 
 ln -si "$PWD/feh_help"  "$lbin/feh_help"
