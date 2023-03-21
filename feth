@@ -1,0 +1,25 @@
+#!/bin/bash
+# Wrapper around feh to better manage thumbnail mode with very large collections
+MAX_IMG_WIDTH=1910
+MAX_IMG_HEIGHT=5400
+MAX_THUMB_SIZE=477 # all thumbnails exist in a square
+DEBUG=1
+
+[ -z "$1" ] && echo "no args given" && exit 1;
+
+function debug {
+	if [ $DEBUG -eq 1 ];then
+		for arg in $@;do
+			echo "$arg : ${!arg}"
+		done
+	fi
+}
+
+max_img_size=$((MAX_IMG_WIDTH * MAX_IMG_HEIGHT))
+args="$#"
+debug args
+float_thumb_size=$(calc min\($MAX_THUMB_SIZE,sqrt\($max_img_size / $args\)\))
+debug float_thumb_size
+thumb_size=${float_thumb_size%.*}
+debug thumb_size
+/bin/feh -T sane_theme -t -W $MAX_IMG_WIDTH -H $MAX_IMG_HEIGHT -E $thumb_size -y $thumb_size --index-info '' $*
