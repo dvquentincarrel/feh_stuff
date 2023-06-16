@@ -25,9 +25,11 @@ else
     fi
 fi
 
+echo "gathering files..."
 # Recursively gathers all files with matching extensions under cwd, into an array
 while read -r line; do
 files+=("$line")
-done <<< $(find "$PWD" -type f | grep $extensions_pattern | sort -R)
+done <<< $(find -L "$PWD" -type f | grep $extensions_pattern | sort -R)
+echo "${#files[@]} files found"
 
 feh --theme playlist_theme --slideshow-delay $timer "${files[@]}"&
