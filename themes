@@ -1,5 +1,5 @@
 # PREFIX WITH ";" TO NOT MOVE TO NEXT FILE
-sane_theme \
+feh \
 	--action1 ";[show keys (?)] feh_help"\
 	--action2 "[delete file (C-del)] feh_del %F"\
 	--action3 ";[findit (C-s)] findit %F"\
