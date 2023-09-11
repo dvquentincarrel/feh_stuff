@@ -7,7 +7,7 @@ fi
 mv "$1" /tmp/feh_del/
 res=$?
 if [ $res -eq 0 ]; then
-	notify-send -t 1000 "$1 deleted"
+	notify-send -t 3000 "$1 deleted"
 else
-	notify-send -t 2000 "error: exit status $res"
+	notify-send -t 5000 "error: exit status $res"
 fi
