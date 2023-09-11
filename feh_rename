@@ -1,0 +1,13 @@
+#!/bin/python
+import sys
+import os
+import subprocess
+if len(sys.argv) != 2:
+    exit(1)
+filename, ext = sys.argv[1].rsplit('.', 1)
+args = ['zenity', '--entry', f'--text=Rename {sys.argv[1]}', f'--entry-text={filename}']
+ans = subprocess.run(args, text=True, capture_output=True).stdout[:-1]
+if(ans):
+    os.rename(sys.argv[1], f"{ans}.{ext}")
+else:
+    exit(1)

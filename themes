@@ -3,6 +3,7 @@ sane_theme \
 	--action1 ";[show keys (?)] feh_help"\
 	--action2 "[delete file (C-del)] feh_del %F"\
 	--action3 ";[findit (C-s)] findit %F"\
+    --action4 "[rename <F2>] feh_rename %F"\
 	--auto-zoom\
 	--draw-filename\
 	--draw-tinted\
@@ -15,8 +16,11 @@ sane_theme \
 
 playlist_theme \
 	--action1 ";[show keys (?)] feh_help"\
+	--action2 "[delete file (C-del)] feh_del %F"\
 	--action3 ";[findit (C-s)] findit %F"\
+    --action4 "[rename <F2>] feh_rename %F"\
 	--auto-zoom\
 	--draw-tinted\
 	--info ";feh_info %F"\
     --scale-down
+
